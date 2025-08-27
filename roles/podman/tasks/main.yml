@@ -16,8 +16,8 @@
 - name: "Podman: Enable lingering"
   become: true
   ansible.builtin.command: loginctl enable-linger {{ podman_user }}
-  register: lingering
-  changed_when: lingering.rc != 0
+  register: podman_lingering
+  changed_when: podman_lingering.rc != 0
 
 - name: "Podman: Ensure folder exists"
   become: true
